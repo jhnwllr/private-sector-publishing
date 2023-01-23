@@ -9,3 +9,4 @@ jobs:
     steps:
         - name: build private sector stats table
           run: echo "hello world"
+          run: bash run.sh
