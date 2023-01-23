@@ -1,15 +1,10 @@
 on: push
 
-name: run
+name: build-table
 
 jobs:
-  run:
-    runs-on: ${{ matrix.config.os }}
+  build-table:
     name: build table 
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-        - { os: macOS-latest, r: 'latest'}
-
-
+    steps:
+        - name: build private sector stats table
+          run: echo "hello world"
