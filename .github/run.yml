@@ -1,0 +1,15 @@
+on: push
+
+name: run
+
+jobs:
+  run:
+    runs-on: ${{ matrix.config.os }}
+    name: build table 
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - { os: macOS-latest, r: 'latest'}
+
+
