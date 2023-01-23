@@ -5,6 +5,7 @@ name: build-table
 jobs:
   build-table:
     name: build table 
+    runs-on: ubuntu-latest
     steps:
         - name: build private sector stats table
           run: echo "hello world"
