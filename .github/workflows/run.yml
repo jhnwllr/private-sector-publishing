@@ -26,11 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pak::pkg_install("ropensci/rgbif")
+          pak::pkg_install("ropensci/rgbif/tree/literature")
           pak::pkg_install(c("readr","purrr","dplyr", "ascii"))
         shell: Rscript {0}
 
 
-      - name: Run custom R script
+      - name: build table script
         run: Rscript R/stats.R
         
