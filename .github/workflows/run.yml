@@ -1,4 +1,11 @@
 name: learn-github-actions
+
+   env:
+    NOT_CRAN: true
+    TZ: UTC
+    R_LIBS_USER: tempdir/Library
+    _R_CHECK_SYSTEM_CLOCK_: FALSE
+   
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
