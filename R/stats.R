@@ -1,6 +1,6 @@
 
 library(dplyr)
-
+library(purrr)
 # setwd("C:/Users/ftw712/Desktop/private-sector-publishing/")
 
 ss = readr::read_tsv("data/source.tsv") %>% 
