@@ -1,7 +1,7 @@
 
 library(dplyr)
 
-setwd("C:/Users/ftw712/Desktop/private-sector-publishing/")
+# setwd("C:/Users/ftw712/Desktop/private-sector-publishing/")
 
 ss = readr::read_tsv("data/source.tsv") %>% 
 mutate(pd = ifelse(grepl("publisher",link),"publisher","dataset")) %>% 
