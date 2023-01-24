@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "running script"
+# echo "running script"
 # Rscript.exe --vanilla R/stats.R
 

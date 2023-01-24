@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: build private sector stats table
-          run: bash run.sh
+          run: ls
           shell: bash
