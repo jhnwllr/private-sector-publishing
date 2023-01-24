@@ -23,7 +23,13 @@ jobs:
         run: |
           install.packages("pak", repos = "https://r-lib.github.io/p/pak/devel/")
         shell: Rscript {0}
+
       - name: Install dependencies
         run: |
           pak::pkg_install(c("dplyr", "rgbif"))
         shell: Rscript {0}
+
+
+      - name: Run custom R script
+        run: Rscript R/test.R
+        
