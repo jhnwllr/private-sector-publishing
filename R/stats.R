@@ -3,14 +3,13 @@ library(dplyr)
 
 # setwd("C:/Users/ftw712/Desktop/private-sector-publishing/")
 
-ss = readr::read_tsv("data/source.tsv") 
-# %>% 
-# mutate(pd = ifelse(grepl("publisher",link),"publisher","dataset")) %>% 
-# mutate(key = gsub("https://www.gbif.org/publisher/","",link)) %>%
-# mutate(key = gsub("https://www.gbif.org/dataset/","",key)) %>% 
-# glimpse()
+ss = readr::read_tsv("data/source.tsv") %>% 
+mutate(pd = ifelse(grepl("publisher",link),"publisher","dataset")) %>% 
+mutate(key = gsub("https://www.gbif.org/publisher/","",link)) %>%
+mutate(key = gsub("https://www.gbif.org/dataset/","",key)) %>% 
+glimpse()
 
-# gbif_country = rgbif::enumeration_country() %>% select(Country=title,iso2) %>% glimpse()
+gbif_country = rgbif::enumeration_country() %>% select(Country=title,iso2) %>% glimpse()
 
 # pp = ss %>%
 # dplyr::filter(pd == "publisher") %>%
