@@ -26,10 +26,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pak::pkg_install(c("dplyr", "rgbif"))
+          pak::pkg_install(c("readr","dplyr", "rgbif"))
         shell: Rscript {0}
 
 
       - name: Run custom R script
-        run: Rscript R/test.R
+        run: Rscript R/stats.R
         
