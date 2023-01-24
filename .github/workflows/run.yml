@@ -11,3 +11,8 @@ jobs:
         with:
           r-version: '4.2.2'
       - run: Rscript -e 'print("hello")'
+      
+      - name: Install pak
+        run: |
+          install.packages("pak", repos = "https://r-lib.github.io/p/pak/devel/")
+        shell: Rscript {0}
