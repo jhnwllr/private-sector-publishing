@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pak::pkg_install(c("readr","dplyr", "rgbif", "ascii"))
+          pak::pkg_install(c("readr","purrr","dplyr", "rgbif", "ascii"))
         shell: Rscript {0}
 
 
