@@ -1,6 +1,9 @@
-on: push 
-  # schedule:
-    # - cron: '0 0 1 * *'
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 1 * *' # every month
 
 jobs:
   build:
@@ -32,9 +35,7 @@ jobs:
           pak::pkg_install(c("readr","purrr","dplyr", "ascii"))
         shell: Rscript {0}
 
-
       - name: build table script
         run: Rscript R/stats.R
         
-
       - uses: stefanzweifel/git-auto-commit-action@v4

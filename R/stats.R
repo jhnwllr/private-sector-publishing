@@ -43,7 +43,12 @@ arrange(name) %>%
 select(Company, `Activity sector`,	Country, Datasets, `Occurrence records`, `Data citations`) %>%
 glimpse() 
 
-save_file_table = paste0("exports/table-",Sys.Date(),".adoc")
+# save tsv
+save_file_tsv = paste0("exports/tsv/table-",Sys.Date(),".tsv")
+tt %>% readr::write_tsv(save_file_tsv)
+
+# save .adoc
+save_file_table = paste0("exports/table/table-",Sys.Date(),".adoc")
 
 sink(file = save_file_table, type = "output")
 tt %>%  
@@ -54,7 +59,7 @@ ascii::ascii(include.rownames = FALSE, digits = 0)
 sink()
 
 # totals table
-save_file_totals = paste0("exports/table-totals-",Sys.Date(),".adoc")
+save_file_totals = paste0("exports/totals/table-totals-",Sys.Date(),".adoc")
 
 sink(file = save_file_totals, type = "output")
 tt %>% 
@@ -69,4 +74,6 @@ mutate(`Data citations` = format(`Data citations`, nsmall=0, big.mark=",")) %>%
 ascii::ascii(include.rownames = FALSE, digits = 0)
 sink()
 
-list.files("exports/")
+list.files("exports/totals/")
+list.files("exports/table/")
+list.files("exports/tsv/")
