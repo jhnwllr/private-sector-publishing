@@ -34,3 +34,8 @@ jobs:
       - name: build table script
         run: Rscript R/stats.R
         
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+        commit_message: Changed files
+        
