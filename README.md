@@ -17,11 +17,13 @@ https://github.com/jhnwllr/private-sector-publishing/blob/main/data/source.tsv
 https://github.com/jhnwllr/private-sector-publishing/actions
 
 3. Look for the generated tables here: 
+
 https://github.com/jhnwllr/private-sector-publishing/tree/main/exports
 
 Probably you want the ones from these folders: 
-https://github.com/jhnwllr/private-sector-publishing/tree/main/exports/table
-https://github.com/jhnwllr/private-sector-publishing/tree/main/exports/totals
+
+* https://github.com/jhnwllr/private-sector-publishing/tree/main/exports/table
+* https://github.com/jhnwllr/private-sector-publishing/tree/main/exports/totals
 
 ## scheduled builds 
 
