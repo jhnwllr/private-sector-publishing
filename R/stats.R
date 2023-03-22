@@ -15,7 +15,7 @@ pp = ss %>%
 dplyr::filter(pd == "publisher") %>%
 select(key,`Activity sector`) %>% 
 mutate(name = map_chr(key,~rgbif::dataset_search(publishingOrg=.x,limit=1)$data$publishingOrganization)) %>% 
-mutate(`Occurrence records` = map_dbl(key,~ rgbif::occ_search(publishingOrg = .x,limit=0)$meta$count)) %>% 
+mutate(`Occurrence records` = map_dbl(key,~ rgbif::occ_search(publishingOrg = .x,occurrenceStatus=NULL,limit=0)$meta$count)) %>% 
 mutate(Datasets = map_dbl(key,~rgbif::dataset_search(publishingOrg= .x,limit=0)$meta$count)) %>% 
 mutate(`Data citations` = map_dbl(key,~rgbif::lit_count(publishingOrg = .x))) %>%
 mutate(Company = paste0("https://www.gbif.org/publisher/",key,"[",name,"]")) %>%
@@ -28,7 +28,7 @@ dplyr::filter(pd == "dataset") %>%
 select(key,`Activity sector`) %>% 
 mutate(name = map_chr(key,~rgbif::datasets(uuid=.x,limit=1)$data$title)) %>%
 mutate(`Occurrence records` = map_dbl(key,~
-rgbif::occ_search(datasetKey = .x,limit=0)$meta$count)) %>%
+rgbif::occ_search(datasetKey = .x,occurrenceStatus=NULL,limit=0)$meta$count)) %>%
 mutate(Datasets = 1) %>% 
 mutate(`Data citations` = map_dbl(key,~rgbif::lit_count(datasetKey = .x))) %>%
 mutate(Company = paste0("(https://www.gbif.org/dataset/",key,")[",name,"]")) %>% 
